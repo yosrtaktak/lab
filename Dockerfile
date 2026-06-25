@@ -5,7 +5,7 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
-RUN npm run build --configuration production
+RUN npx ng build Lab --configuration production
 
 FROM nginx:alpine
 COPY --from=build /app/dist/lab/browser /usr/share/nginx/html
