@@ -1,0 +1,109 @@
+{
+  "member": [
+    {
+      "id": "1",
+      "cin": "12345678",
+      "nom": "yosr",
+      "type": "teacher",
+      "createdDate": "2023-01-01",
+      "tab_events": [
+        {
+          "id": "1"
+        },
+        {
+          "id": "2"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "cin": "87654321",
+      "nom": "ahmed",
+      "type": "student",
+      "createdDate": "2023-01-02",
+      "tab_events": [
+        {
+          "id": "1"
+        },
+        {
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "cin": "1213234",
+      "nom": "taktak ",
+      "type": "teacher",
+      "createdDate": "2026-05-09",
+      "id": "9w6223YVkII",
+      "tab_events": [
+        {
+          "id": "1"
+        }
+      ]
+    },
+    {
+      "cin": "343535532",
+      "nom": "sarra",
+      "type": "student",
+      "createdDate": "2026-05-09",
+      "id": "9w6223YVkII",
+      "tab_events": [
+        {
+          "id": "2"
+        },
+        {
+          "id": "4"
+        },
+        {
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "cin": "234255",
+      "nom": "taktak",
+      "type": "yosr",
+      "createdDate": "2026-06-12",
+      "id": "QsB9gK3Q19k"
+    }
+  ],
+  "evenement": [
+    {
+      "titre": "Conférence sur l'intelligence artificielle",
+      "dateDebut": "2023-10-09T23:00:00.000Z",
+      "dateFin": "2023-10-25T23:00:00.000Z",
+      "lieu": "sfax",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "titre": "Atelier de développement web",
+      "dateDebut": "2023-11-01",
+      "dateFin": "2023-11-01",
+      "lieu": "tunis"
+    },
+    {
+      "id": "3",
+      "titre": "Hackathon de programmation",
+      "dateDebut": "2023-12-15",
+      "dateFin": "2023-12-17",
+      "lieu": "sfax"
+    },
+    {
+      "id": "4",
+      "titre": "Séminaire",
+      "dateDebut": "2023-12-20",
+      "dateFin": "2023-12-20",
+      "lieu": "sousse"
+    },
+    {
+      "titre": "test",
+      "dateDebut": "2026-06-05T23:00:00.000Z",
+      "dateFin": "2026-06-08T23:00:00.000Z",
+      "lieu": "Gafsa",
+      "id": "cnWvVYJtZCg"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

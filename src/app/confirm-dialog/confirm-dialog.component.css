@@ -1,0 +1,87 @@
+/* ── Confirm dialog ────────────────────────────────────── */
+.confirm-dialog {
+  min-width: 300px;
+  padding: 8px 6px 10px;
+  color: var(--color-ink-900);
+  background: linear-gradient(160deg, #ffffff 0%, var(--color-surface-alt) 100%);
+}
+
+/* Override dialog container */
+:host ::ng-deep .mat-mdc-dialog-container {
+  border-radius: var(--radius-xl) !important;
+  background: transparent;
+  box-shadow: var(--shadow-lg) !important;
+}
+:host ::ng-deep .mat-mdc-dialog-surface {
+  background: transparent;
+  border-radius: var(--radius-xl) !important;
+}
+
+/* ── Dialog title ──────────────────────────────────────── */
+.confirm-dialog [mat-dialog-title],
+.confirm-dialog h2 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-ink-900);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Danger icon prefix */
+.confirm-dialog h2::before {
+  content: 'warning';
+  font-family: 'Material Icons';
+  font-size: 1.3rem;
+  color: var(--color-danger);
+  line-height: 1;
+}
+
+/* ── Dialog content ────────────────────────────────────── */
+.confirm-dialog mat-dialog-content {
+  margin: 0;
+  padding: 0 0 20px;
+  color: var(--color-ink-500);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+/* ── Actions row ───────────────────────────────────────── */
+.confirm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 0;
+  border-top: 1px solid var(--color-ink-100);
+  padding-top: 14px;
+}
+
+/* Cancel */
+.confirm-actions button[mat-stroked-button] {
+  border-radius: var(--radius-md) !important;
+  min-width: 96px;
+  color: var(--color-ink-500) !important;
+  border-color: var(--color-ink-200) !important;
+  font-weight: 600 !important;
+  transition: background 150ms ease, border-color 150ms ease !important;
+}
+.confirm-actions button[mat-stroked-button]:hover {
+  background: var(--color-ink-50) !important;
+  border-color: var(--color-ink-400) !important;
+}
+
+/* Confirm (warn) */
+.confirm-actions button[mat-flat-button] {
+  border-radius: var(--radius-md) !important;
+  min-width: 96px;
+  background: var(--color-danger) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 12px rgba(250, 82, 82, 0.35) !important;
+  transition: box-shadow 150ms ease, transform 120ms ease !important;
+}
+.confirm-actions button[mat-flat-button]:hover {
+  box-shadow: 0 6px 18px rgba(250, 82, 82, 0.5) !important;
+  transform: translateY(-1px);
+}

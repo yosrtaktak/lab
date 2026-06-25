@@ -1,0 +1,73 @@
+:host {
+	display: block;
+}
+
+.event-dialog {
+	min-width: 320px;
+	padding: 8px 6px 10px;
+	color: var(--color-ink-900);
+	background: linear-gradient(160deg, #ffffff 0%, var(--color-surface-alt) 100%);
+}
+
+:host ::ng-deep .mat-mdc-dialog-container {
+	border-radius: var(--radius-xl) !important;
+	background: transparent;
+	box-shadow: var(--shadow-lg) !important;
+}
+
+:host ::ng-deep .mat-mdc-dialog-surface {
+	background: transparent;
+	border-radius: var(--radius-xl) !important;
+}
+
+.event-dialog [mat-dialog-title],
+.event-dialog h2 {
+	margin: 0 0 14px;
+	font-size: 1.2rem;
+	font-weight: 800;
+	color: var(--color-ink-900);
+}
+
+.event-dialog mat-dialog-content {
+	display: grid;
+	gap: 10px;
+	margin: 0;
+	padding: 0 0 20px;
+}
+
+.event-dialog mat-form-field {
+	width: 100%;
+}
+
+.event-dialog mat-form-field ::ng-deep .mat-mdc-text-field-wrapper {
+	background: rgba(255, 255, 255, 0.95) !important;
+	border-radius: var(--radius-md) !important;
+}
+
+.event-dialog mat-form-field ::ng-deep .mdc-notched-outline__leading,
+.event-dialog mat-form-field ::ng-deep .mdc-notched-outline__notch,
+.event-dialog mat-form-field ::ng-deep .mdc-notched-outline__trailing {
+	border-color: var(--color-ink-200) !important;
+}
+
+.event-dialog mat-form-field.mat-focused ::ng-deep .mdc-notched-outline__leading,
+.event-dialog mat-form-field.mat-focused ::ng-deep .mdc-notched-outline__notch,
+.event-dialog mat-form-field.mat-focused ::ng-deep .mdc-notched-outline__trailing {
+	border-color: var(--color-primary) !important;
+	border-width: 2px !important;
+}
+
+.event-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+	border-top: 1px solid var(--color-ink-100);
+	padding: 14px 0 0;
+	margin: 0;
+}
+
+.event-actions button {
+	border-radius: var(--radius-md) !important;
+	min-width: 92px;
+	font-weight: 600;
+}

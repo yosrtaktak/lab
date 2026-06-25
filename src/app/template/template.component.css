@@ -1,0 +1,152 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+/* ── Sidenav container ─────────────────────────────────── */
+mat-sidenav-container {
+  height: 100vh;
+  background: var(--color-bg) !important;
+}
+
+/* ── Sidenav panel ─────────────────────────────────────── */
+mat-sidenav {
+  width: 240px;
+  background: linear-gradient(170deg, #2D3FA6 0%, #1e2d7d 100%) !important;
+  border-right: none !important;
+  box-shadow: 4px 0 24px rgba(59, 91, 219, 0.22) !important;
+}
+
+/* Sidenav header toolbar */
+mat-sidenav .mat-toolbar {
+  background: rgba(0, 0, 0, 0.18) !important;
+  color: #fff !important;
+  min-height: 64px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0 18px;
+  gap: 12px;
+}
+
+mat-sidenav .mat-toolbar mat-icon {
+  color: var(--color-accent);
+  font-size: 1.4rem;
+}
+
+/* Nav items */
+mat-sidenav mat-nav-list {
+  padding: 12px 10px;
+}
+
+mat-sidenav mat-nav-list a.mat-mdc-list-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.78) !important;
+  border-radius: var(--radius-md) !important;
+  margin-bottom: 4px;
+  height: 46px;
+  padding: 0 14px !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 160ms ease, color 160ms ease, transform 120ms ease !important;
+}
+
+/* matListItemIcon & matListItemTitle directives */
+mat-sidenav [matListItemIcon] {
+  color: var(--color-accent) !important;
+  font-size: 1.15rem !important;
+  width: 1.15rem !important;
+  height: 1.15rem !important;
+  flex-shrink: 0;
+  margin-right: 4px;
+}
+mat-sidenav [matListItemTitle] {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: inherit;
+}
+
+mat-sidenav mat-nav-list a.mat-mdc-list-item:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  transform: translateX(3px);
+}
+
+mat-sidenav mat-nav-list a.mat-mdc-list-item.active-link,
+mat-sidenav mat-nav-list a.mat-mdc-list-item.active {
+  background: rgba(255, 255, 255, 0.18) !important;
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+mat-sidenav mat-nav-list a mat-icon {
+  color: var(--color-accent) !important;
+  font-size: 1.15rem;
+  width: 1.15rem;
+  height: 1.15rem;
+  flex-shrink: 0;
+}
+
+/* ── Top Toolbar ───────────────────────────────────────── */
+mat-sidenav-content > mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: 64px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #3B5BDB 0%, #4f46e5 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 20px rgba(59, 91, 219, 0.35) !important;
+}
+
+/* Hamburger & title */
+.toolbar-button {
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-radius: var(--radius-sm) !important;
+  transition: background 140ms ease !important;
+}
+.toolbar-button:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+.toolbar-title {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-left: 8px;
+  color: #fff;
+}
+.toolbar-button span {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-left: 6px;
+}
+
+/* Separator */
+.toolbar-separator {
+  flex: 1;
+}
+
+/* Avatar trigger */
+button[mat-button].toolbar-button {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* ── Content area ──────────────────────────────────────── */
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 56px;
+}
+
+/* ── Scrollable content ────────────────────────────────── */
+mat-sidenav-content {
+  background: var(--color-bg) !important;
+}

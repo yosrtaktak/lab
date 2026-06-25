@@ -1,0 +1,43 @@
+/* ── Articles page ─────────────────────────────────────── */
+:host {
+  display: block;
+  animation: fadeInUp 0.35s ease both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.articles-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 72px 24px;
+  background: rgba(255,255,255,0.9);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(99,102,241,0.1);
+  box-shadow: 0 4px 18px rgba(59,91,219,0.07);
+  text-align: center;
+  color: var(--color-ink-400);
+}
+
+.articles-empty mat-icon {
+  font-size: 3.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  color: var(--color-primary-200);
+}
+
+.articles-empty p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+p {
+  color: var(--color-ink-500);
+  font-size: 0.95rem;
+}

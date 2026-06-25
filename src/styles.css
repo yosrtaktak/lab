@@ -1,1 +1,317 @@
-/* You can add global styles to this file, and also import other style files */
+/* ═══════════════════════════════════════════════════════
+   LABORATOIRE IIT — DESIGN SYSTEM
+   Palette Indigo × Teal | Light Mode
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Color Tokens ─────────────────────────────────────── */
+:root {
+  /* Primary – Indigo */
+  --color-primary-50:  #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-200: #c7d2fe;
+  --color-primary-300: #a5b4fc;
+  --color-primary-400: #818cf8;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #3B5BDB;
+  --color-primary:     #3B5BDB;
+  --color-primary-dark:#2F4AC4;
+
+  /* Accent – Teal */
+  --color-accent:      #12B886;
+  --color-accent-light:#D3F9EC;
+  --color-accent-dark: #0CA678;
+
+  /* Danger */
+  --color-danger:      #FA5252;
+  --color-danger-light:#FFE3E3;
+
+  /* Warning */
+  --color-warning:     #F59E0B;
+  --color-warning-light:#FEF3C7;
+
+  /* Neutrals */
+  --color-ink-900:     #1A2B4A;
+  --color-ink-700:     #2D4263;
+  --color-ink-500:     #64748B;
+  --color-ink-400:     #94A3B8;
+  --color-ink-200:     #CBD5E1;
+  --color-ink-100:     #E2E8F0;
+  --color-ink-50:      #F1F5F9;
+
+  /* Surface */
+  --color-surface:     #FFFFFF;
+  --color-surface-alt: #F8FAFF;
+  --color-bg:          #EEF2FF;
+
+  /* ── Typography ──────────────────────────────────────── */
+  --font-sans: 'Inter', 'Roboto', 'Helvetica Neue', sans-serif;
+
+  /* ── Spacing ─────────────────────────────────────────── */
+  --radius-sm:  8px;
+  --radius-md:  14px;
+  --radius-lg:  20px;
+  --radius-xl:  28px;
+
+  /* ── Elevation ───────────────────────────────────────── */
+  --shadow-sm:  0 2px 8px rgba(59, 91, 219, 0.08);
+  --shadow-md:  0 8px 24px rgba(59, 91, 219, 0.12);
+  --shadow-lg:  0 18px 48px rgba(59, 91, 219, 0.15);
+}
+
+/* ── Reset & Base ──────────────────────────────────────── */
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-ink-900);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* { box-sizing: border-box; }
+
+a { text-decoration: none; color: inherit; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-ink-900);
+  margin: 0;
+}
+
+/* ── Angular Material Theme Overrides ──────────────────── */
+
+/* Toolbar */
+.mat-toolbar.mat-primary {
+  background: linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-600) 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 20px rgba(59, 91, 219, 0.3) !important;
+}
+
+/* Primary buttons */
+.mat-mdc-raised-button.mat-primary,
+.mat-mdc-flat-button.mat-primary {
+  background: var(--color-primary) !important;
+  color: #fff !important;
+  border-radius: var(--radius-md) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.3px !important;
+  box-shadow: 0 4px 14px rgba(59, 91, 219, 0.35) !important;
+  transition: box-shadow 180ms ease, transform 120ms ease !important;
+}
+.mat-mdc-raised-button.mat-primary:hover,
+.mat-mdc-flat-button.mat-primary:hover {
+  background: var(--color-primary-dark) !important;
+  box-shadow: 0 6px 20px rgba(59, 91, 219, 0.45) !important;
+  transform: translateY(-1px);
+}
+
+/* Warn buttons */
+.mat-mdc-flat-button.mat-warn,
+.mat-mdc-raised-button.mat-warn {
+  background: var(--color-danger) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: 0 4px 14px rgba(250, 82, 82, 0.35) !important;
+}
+
+/* Stroked buttons */
+.mat-mdc-outlined-button,
+.mat-mdc-stroked-button {
+  border-radius: var(--radius-md) !important;
+  border-color: var(--color-ink-200) !important;
+  color: var(--color-ink-700) !important;
+  font-weight: 500 !important;
+}
+.mat-mdc-outlined-button:hover,
+.mat-mdc-stroked-button:hover {
+  background: var(--color-primary-50) !important;
+  border-color: var(--color-primary-300) !important;
+  color: var(--color-primary) !important;
+}
+
+/* Icon buttons */
+.mat-mdc-icon-button.mat-primary .mat-icon { color: var(--color-primary); }
+.mat-mdc-icon-button.mat-warn .mat-icon   { color: var(--color-danger); }
+
+/* Tables */
+.mat-mdc-table {
+  background: transparent !important;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.mat-mdc-header-row {
+  background: var(--color-primary-50) !important;
+}
+.mat-mdc-header-cell {
+  color: var(--color-primary-700) !important;
+  font-weight: 700 !important;
+  font-size: 0.78rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 2px solid var(--color-primary-200) !important;
+}
+.mat-mdc-cell {
+  color: var(--color-ink-700) !important;
+  font-size: 0.9rem !important;
+  border-bottom: 1px solid var(--color-ink-100) !important;
+}
+.mat-mdc-row:hover .mat-mdc-cell {
+  background: var(--color-primary-50) !important;
+}
+
+/* Form fields */
+.mat-mdc-form-field-subscript-wrapper { display: none; }
+.mat-mdc-text-field-wrapper {
+  background: var(--color-surface-alt) !important;
+  border-radius: var(--radius-md) !important;
+}
+.mat-mdc-form-field.mat-focused .mdc-notched-outline__leading,
+.mat-mdc-form-field.mat-focused .mdc-notched-outline__notch,
+.mat-mdc-form-field.mat-focused .mdc-notched-outline__trailing {
+  border-color: var(--color-primary) !important;
+  border-width: 2px !important;
+}
+.mat-mdc-form-field-label { color: var(--color-ink-500) !important; }
+
+/* Paginator */
+.mat-mdc-paginator {
+  background: transparent !important;
+  color: var(--color-ink-500) !important;
+  font-size: 0.85rem !important;
+}
+
+/* Sidenav */
+.mat-drawer {
+  background: linear-gradient(180deg, var(--color-primary-700) 0%, #2a4298 100%) !important;
+  color: #fff !important;
+}
+.mat-drawer .mat-mdc-list-item {
+  color: rgba(255,255,255,0.85) !important;
+  border-radius: var(--radius-md) !important;
+  margin: 2px 8px !important;
+  transition: background 150ms ease !important;
+}
+.mat-drawer .mat-mdc-list-item:hover {
+  background: rgba(255,255,255,0.12) !important;
+  color: #fff !important;
+}
+.mat-drawer .mat-toolbar {
+  background: rgba(0,0,0,0.15) !important;
+}
+
+/* Cards */
+.mat-mdc-card {
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-md) !important;
+  border: 1px solid var(--color-ink-100) !important;
+}
+
+/* Menu */
+.mat-mdc-menu-panel {
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-lg) !important;
+  border: 1px solid var(--color-ink-100) !important;
+  overflow: hidden !important;
+}
+.mat-mdc-menu-item .mat-icon { color: var(--color-primary); }
+
+/* Snackbar */
+.mat-mdc-snack-bar-container {
+  border-radius: var(--radius-md) !important;
+}
+
+/* Chips */
+.mat-mdc-chip.mat-mdc-standard-chip {
+  background: var(--color-primary-100) !important;
+  color: var(--color-primary-700) !important;
+  font-weight: 600 !important;
+  border-radius: 100px !important;
+}
+
+/* ── Confirm Dialog (global panel override) ────────────── */
+.confirm-dialog-panel .mat-mdc-dialog-container {
+  border-radius: var(--radius-xl) !important;
+  box-shadow: var(--shadow-lg) !important;
+  overflow: hidden;
+}
+.confirm-dialog-panel .mat-mdc-dialog-surface {
+  background: linear-gradient(160deg, #ffffff 0%, var(--color-surface-alt) 100%);
+}
+
+/* ── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--color-ink-50); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-200);
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-primary-400); }
+
+/* ── Shared Page Layout Utilities ──────────────────────── */
+.page-shell {
+  display: grid;
+  gap: 24px;
+  padding: 8px 0;
+}
+
+.page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.page-kicker {
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  opacity: 0.8;
+}
+
+.page-title {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--color-ink-900);
+  line-height: 1.1;
+}
+
+.page-description {
+  margin: 8px 0 0;
+  max-width: 48rem;
+  color: var(--color-ink-500);
+  font-size: 0.92rem;
+}
+
+/* ── Card utility ──────────────────────────────────────── */
+.glass-card {
+  background: rgba(255,255,255,0.92);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(12px);
+  padding: 20px;
+}
+
+/* ── Badge utility ─────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.badge-primary { background: var(--color-primary-100); color: var(--color-primary-700); }
+.badge-accent  { background: var(--color-accent-light); color: var(--color-accent-dark); }
+.badge-danger  { background: var(--color-danger-light); color: var(--color-danger); }

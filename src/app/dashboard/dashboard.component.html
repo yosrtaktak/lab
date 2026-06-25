@@ -1,0 +1,76 @@
+<!-- Welcome banner -->
+<div class="dashboard-banner">
+  <div>
+    <h1>Bienvenue au Laboratoire 👋</h1>
+    <p>Gérez vos membres, articles et événements depuis ce tableau de bord.</p>
+  </div>
+  <span class="banner-icon">🔬</span>
+</div>
+
+<!-- KPI Cards -->
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-label">Membres</div>
+    <div class="kpi-value">{{NbMembers}}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Articles</div>
+    <div class="kpi-value">–</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Événements</div>
+    <div class="kpi-value">{{NbEvents}}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Outils actifs</div>
+    <div class="kpi-value">–</div>
+  </div>
+</div> 
+
+<div class="charts-grid">
+  <div class="chart-card">
+    <div class="chart-wrapper">
+      <canvas baseChart
+              [type]="'line'"
+        [datasets]="chartData"
+        [labels]="chartLabels"
+        [options]="chartOptions"
+        >
+      </canvas>
+    </div>
+  </div>
+
+  <div class="chart-card">
+    <div class="chart-wrapper">
+      <canvas baseChart
+              [type]="'pie'"
+        [datasets]="chartDataPie"
+        [labels]="chartLabelsPie"
+        [options]="chartOptionsPie"
+        >
+      </canvas>
+    </div>
+  </div>
+
+  <div class="chart-card">
+    <div class="chart-wrapper">
+      <canvas baseChart
+              [type]="'doughnut'"
+        [datasets]="chartDataD"
+        [labels]="chartLabelsD"
+        [options]="chartOptionsD"
+        >
+      </canvas>
+    </div>
+  </div>
+</div>
+
+<!-- <mat-card>
+     <mat-card-title> Nb Members</mat-card-title>
+    <mat-card-subtitle>{{NbMembers}}</mat-card-subtitle>
+</mat-card>
+
+<mat-card>
+     <mat-card-title> Nb Events</mat-card-title>
+    <mat-card-subtitle>{{NbEvents}}</mat-card-subtitle>
+</mat-card> -->

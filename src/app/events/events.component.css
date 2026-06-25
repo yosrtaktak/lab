@@ -1,0 +1,214 @@
+/* ── Events page ───────────────────────────────────────── */
+:host {
+  display: block;
+}
+
+.events-page {
+  display: grid;
+  gap: 24px;
+  padding: 8px 0;
+  animation: fadeInUp 0.35s ease both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Page Header ───────────────────────────────────────── */
+.page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.page-kicker {
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.page-title {
+  margin: 0;
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--color-ink-900);
+  line-height: 1.1;
+}
+
+.page-description {
+  margin: 8px 0 0;
+  max-width: 48rem;
+  color: var(--color-ink-500);
+  font-size: 0.9rem;
+}
+
+.create-btn {
+  height: 46px;
+  border-radius: var(--radius-md) !important;
+  padding: 0 22px !important;
+  font-weight: 600 !important;
+  font-size: 0.88rem !important;
+  letter-spacing: 0.4px !important;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #4f46e5 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 14px rgba(59, 91, 219, 0.38) !important;
+  transition: box-shadow 180ms ease, transform 120ms ease !important;
+}
+
+.create-btn:hover {
+  box-shadow: 0 6px 22px rgba(59, 91, 219, 0.52) !important;
+  transform: translateY(-2px);
+}
+
+.create-btn mat-icon {
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+/* ── Filter bar ────────────────────────────────────────── */
+.filter-row {
+  display: flex;
+  align-items: center;
+}
+
+.events-filter {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Full-width form field */
+.events-filter mat-form-field,
+mat-form-field {
+  width: 100%;
+}
+
+mat-form-field ::ng-deep .mat-mdc-text-field-wrapper {
+  background: rgba(255,255,255,0.95) !important;
+  border-radius: var(--radius-md) !important;
+}
+mat-form-field ::ng-deep .mdc-notched-outline__leading,
+mat-form-field ::ng-deep .mdc-notched-outline__notch,
+mat-form-field ::ng-deep .mdc-notched-outline__trailing {
+  border-color: var(--color-ink-200) !important;
+}
+mat-form-field.mat-focused ::ng-deep .mdc-notched-outline__leading,
+mat-form-field.mat-focused ::ng-deep .mdc-notched-outline__notch,
+mat-form-field.mat-focused ::ng-deep .mdc-notched-outline__trailing {
+  border-color: var(--color-primary) !important;
+  border-width: 2px !important;
+}
+mat-form-field ::ng-deep .mat-mdc-form-field-subscript-wrapper { display: none; }
+
+/* ── Elevation card ────────────────────────────────────── */
+.mat-elevation-z8 {
+  border-radius: var(--radius-xl) !important;
+  overflow: hidden;
+  background: rgba(255,255,255,0.97) !important;
+  border: 1px solid rgba(99,102,241,0.1) !important;
+  box-shadow: 0 8px 32px rgba(59,91,219,0.1) !important;
+}
+
+.events-card {
+  padding: 0;
+}
+
+/* ── Table ─────────────────────────────────────────────── */
+table {
+  width: 100%;
+}
+
+.events-table {
+  min-width: 760px;
+}
+
+.mat-mdc-header-row {
+  background: var(--color-primary-50) !important;
+}
+
+th.mat-mdc-header-cell {
+  color: var(--color-primary-700) !important;
+  font-weight: 700 !important;
+  font-size: 0.74rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 16px 18px !important;
+  border-bottom: 2px solid var(--color-primary-200) !important;
+  background: var(--color-primary-50) !important;
+}
+
+td.mat-mdc-cell {
+  color: var(--color-ink-700) !important;
+  font-size: 0.87rem !important;
+  padding: 15px 18px !important;
+  border-bottom: 1px solid var(--color-ink-100) !important;
+}
+
+.mat-mdc-row {
+  transition: background 120ms ease;
+}
+.mat-mdc-row:hover td.mat-mdc-cell {
+  background: var(--color-primary-50) !important;
+}
+.mat-mdc-row:last-child td.mat-mdc-cell {
+  border-bottom: none !important;
+}
+
+/* ── No-data row ───────────────────────────────────────── */
+tr.mat-row td.mat-cell {
+  text-align: center;
+  padding: 32px !important;
+  color: var(--color-ink-400) !important;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* ── Paginator ─────────────────────────────────────────── */
+mat-paginator {
+  background: var(--color-surface-alt) !important;
+  border-top: 1px solid var(--color-ink-100) !important;
+  color: var(--color-ink-500) !important;
+  font-size: 0.85rem !important;
+  padding: 4px 8px;
+}
+
+mat-paginator ::ng-deep .mat-mdc-icon-button {
+  color: var(--color-primary) !important;
+}
+
+/* ── Actions ───────────────────────────────────────────── */
+.actions-cell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.actions-cell .mat-mdc-icon-button {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: var(--radius-sm) !important;
+  transition: background 150ms ease, transform 120ms ease !important;
+}
+
+.actions-cell .mat-mdc-icon-button.mat-primary:hover {
+  background: var(--color-primary-100) !important;
+  transform: scale(1.1);
+}
+
+.actions-cell .mat-mdc-icon-button.mat-warn:hover {
+  background: var(--color-danger-light) !important;
+  transform: scale(1.1);
+}
+
+.actions-cell .mat-mdc-icon-button.mat-primary .mat-icon {
+  color: var(--color-primary);
+}
+
+.actions-cell .mat-mdc-icon-button.mat-warn .mat-icon {
+  color: var(--color-danger);
+}

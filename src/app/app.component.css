@@ -1,0 +1,63 @@
+:host {
+	display: block;
+	min-height: 100vh;
+}
+
+.app-shell {
+	min-height: 100vh;
+	background:
+		radial-gradient(circle at top left, rgba(25, 118, 210, 0.18), transparent 34%),
+		radial-gradient(circle at top right, rgba(255, 179, 71, 0.18), transparent 28%),
+		linear-gradient(180deg, #f7f9fc 0%, #eef3f9 100%);
+}
+
+.app-toolbar {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	display: flex;
+	gap: 16px;
+	align-items: center;
+	padding: 0 24px;
+	background: rgba(13, 35, 63, 0.88);
+	color: #ffffff;
+	backdrop-filter: blur(14px);
+	box-shadow: 0 12px 32px rgba(13, 35, 63, 0.18);
+}
+
+.brand {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+
+.brand-icon {
+	width: 42px;
+	height: 42px;
+	display: grid;
+	place-items: center;
+	border-radius: 14px;
+	background: linear-gradient(135deg, #ffb347, #ff7a59);
+	color: #10253f;
+}
+
+.brand-title {
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.2;
+}
+
+.brand-subtitle {
+	font-size: 0.8rem;
+	opacity: 0.8;
+}
+
+.toolbar-spacer {
+	flex: 1;
+}
+
+.app-content {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 32px 20px 48px;
+}

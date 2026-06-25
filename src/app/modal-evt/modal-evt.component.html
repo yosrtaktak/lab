@@ -1,0 +1,55 @@
+<div class="event-dialog">
+  <h2 mat-dialog-title *ngIf="!isEditing">Créer un événement</h2>
+  <h2 mat-dialog-title *ngIf="isEditing">Modifier l'événement</h2>
+
+  <mat-dialog-content [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Titre</mat-label>
+      <input
+        matInput
+        placeholder="Titre de l'événement"
+        formControlName="titre"
+      />
+    </mat-form-field>
+
+    <!-- <mat-form-field>
+            <mat-label>Date début</mat-label>
+            <input matInput  placeholder="YYYY-MM-DD" formControlName="dateDebut" [matDatepicker]="picker">
+            
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Date fin</mat-label>
+            <input matInput placeholder="YYYY-MM-DD" formControlName="dateFin">
+        </mat-form-field> -->
+    <mat-form-field>
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [formGroup]="form" [rangePicker]="picker">
+        <input matStartDate formControlName="dateDebut" placeholder="Start date" />
+        <input matEndDate formControlName="dateFin" placeholder="End date" />
+      </mat-date-range-input>
+      <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Lieu</mat-label>
+      <input matInput placeholder="Localisation" formControlName="lieu" />
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="event-actions">
+    <button class="mat-raised-button" (click)="close()">Annuler</button>
+    <button
+      class="mat-raised-button mat-primary"
+      (click)="save()"
+      [disabled]="!form.valid"
+    >
+      {{ isEditing ? "Mettre à jour" : "Créer" }}
+    </button>
+  </mat-dialog-actions>
+</div>

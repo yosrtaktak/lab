@@ -1,0 +1,100 @@
+
+<mat-sidenav-container>
+
+  <!-- ═══ Side nav ═══ -->
+  <mat-sidenav #drawer fixedInViewport="true" mode="over" [opened]="false">
+
+    <!-- Brand header -->
+    <mat-toolbar>
+      <mat-icon>science</mat-icon>
+      <span>Laboratoire</span>
+    </mat-toolbar>
+
+    <!-- Navigation links -->
+    <mat-nav-list>
+      <a mat-list-item
+         routerLink="/dashboard"
+         routerLinkActive="active-link"
+         (click)="drawer.close()">
+        <mat-icon matListItemIcon>dashboard</mat-icon>
+        <span matListItemTitle>Dashboard</span>
+      </a>
+
+      <a mat-list-item
+         routerLink="/member"
+         routerLinkActive="active-link"
+         (click)="drawer.close()">
+        <mat-icon matListItemIcon>supervised_user_circle</mat-icon>
+        <span matListItemTitle>Membres</span>
+      </a>
+
+      <a mat-list-item
+         routerLink="/tools"
+         routerLinkActive="active-link"
+         (click)="drawer.close()">
+        <mat-icon matListItemIcon>settings</mat-icon>
+        <span matListItemTitle>Outils</span>
+      </a>
+
+      <a mat-list-item
+         routerLink="/articles"
+         routerLinkActive="active-link"
+         (click)="drawer.close()">
+        <mat-icon matListItemIcon>article</mat-icon>
+        <span matListItemTitle>Articles</span>
+      </a>
+
+      <a mat-list-item
+         routerLink="/events"
+         routerLinkActive="active-link"
+         (click)="drawer.close()">
+        <mat-icon matListItemIcon>event_note</mat-icon>
+        <span matListItemTitle>Événements</span>
+      </a>
+    </mat-nav-list>
+
+  </mat-sidenav>
+  <!-- ═══ EO Side nav ═══ -->
+
+  <!-- ═══ Main content ═══ -->
+  <mat-sidenav-content>
+
+    <!-- Top toolbar -->
+    <mat-toolbar color="primary">
+      <button type="button"
+              aria-label="Ouvrir le menu"
+              class="toolbar-button"
+              mat-icon-button
+              (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="toolbar-title">Lab IIT</span>
+
+      <span class="toolbar-separator"></span>
+
+      <!-- User menu trigger -->
+      <button [matMenuTriggerFor]="userMenu" mat-icon-button class="toolbar-button" aria-label="Menu utilisateur">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+
+      <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
+        <button mat-menu-item>
+          <mat-icon>account_box</mat-icon>
+          <span>Profil</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Déconnexion</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar>
+
+    <!-- Page content -->
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-sidenav-content>
+  <!-- ═══ EO Main content ═══ -->
+
+</mat-sidenav-container>

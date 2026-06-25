@@ -1,0 +1,36 @@
+<form class="member-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-container">
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>CIN</mat-label>
+      <mat-icon matPrefix>credit_card</mat-icon>
+      <input matInput placeholder="Entrez le CIN" formControlName="cin">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Nom</mat-label>
+      <mat-icon matPrefix>person</mat-icon>
+      <input matInput placeholder="Entrez le nom" formControlName="nom">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Type</mat-label>
+      <mat-icon matPrefix>category</mat-icon>
+      <input matInput placeholder="Entrez le type" formControlName="type">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Date de création</mat-label>
+      <mat-icon matPrefix>event</mat-icon>
+      <input matInput [matDatepicker]="picker" placeholder="Sélectionnez la date" formControlName="createdDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <div class="form-actions">
+      <button mat-raised-button color="primary" type="submit" class="submit-btn">
+        Soumettre
+      </button>
+      <button mat-stroked-button type="reset" class="reset-btn">
+        Réinitialiser
+      </button>
+    </div>
+  </div>
+</form>

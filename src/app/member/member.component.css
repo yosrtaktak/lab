@@ -1,0 +1,148 @@
+/* ── Member Page ───────────────────────────────────────── */
+.member-page {
+  display: grid;
+  gap: 24px;
+  padding: 8px 0;
+  animation: fadeInUp 0.35s ease both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Page Header ───────────────────────────────────────── */
+.page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.page-kicker {
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--color-ink-900);
+  line-height: 1.1;
+}
+
+.page-description {
+  margin: 8px 0 0;
+  max-width: 48rem;
+  color: var(--color-ink-500);
+  font-size: 0.9rem;
+}
+
+/* ── Create Button ─────────────────────────────────────── */
+.create-btn {
+  height: 46px;
+  border-radius: var(--radius-md) !important;
+  padding: 0 22px !important;
+  font-weight: 600 !important;
+  font-size: 0.88rem !important;
+  letter-spacing: 0.4px !important;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #4f46e5 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 14px rgba(59, 91, 219, 0.38) !important;
+  transition: box-shadow 180ms ease, transform 120ms ease !important;
+}
+.create-btn:hover {
+  box-shadow: 0 6px 22px rgba(59, 91, 219, 0.52) !important;
+  transform: translateY(-2px);
+}
+.create-btn mat-icon {
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+/* ── Member Card ───────────────────────────────────────── */
+.member-card {
+  padding: 0;
+  border-radius: var(--radius-xl) !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px solid rgba(99, 102, 241, 0.1) !important;
+  box-shadow: 0 8px 32px rgba(59, 91, 219, 0.1) !important;
+  overflow: hidden;
+}
+
+/* ── Table wrap ────────────────────────────────────────── */
+.table-wrap {
+  overflow: auto;
+  border-radius: var(--radius-xl);
+}
+
+.member-table {
+  width: 100%;
+  min-width: 760px;
+}
+
+/* Header row */
+.member-table .mat-mdc-header-row {
+  background: var(--color-primary-50) !important;
+}
+
+.member-table .mat-mdc-header-cell {
+  background: var(--color-primary-50) !important;
+  color: var(--color-primary-700) !important;
+  font-weight: 700 !important;
+  font-size: 0.75rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 2px solid var(--color-primary-200) !important;
+  padding: 16px 18px !important;
+}
+
+/* Data cells */
+.member-table .mat-mdc-cell {
+  color: var(--color-ink-700) !important;
+  font-size: 0.88rem !important;
+  padding: 16px 18px !important;
+  border-bottom: 1px solid var(--color-ink-100) !important;
+}
+
+/* Row hover */
+.member-table .mat-mdc-row {
+  transition: background 120ms ease;
+}
+.member-table .mat-mdc-row:hover .mat-mdc-cell {
+  background: var(--color-primary-50) !important;
+  cursor: default;
+}
+.member-table .mat-mdc-row:last-child .mat-mdc-cell {
+  border-bottom: none !important;
+}
+
+/* ── Actions cell ──────────────────────────────────────── */
+.actions-cell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.actions-cell .mat-mdc-icon-button {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: var(--radius-sm) !important;
+  transition: background 150ms ease, transform 120ms ease !important;
+}
+.actions-cell .mat-mdc-icon-button.mat-primary:hover {
+  background: var(--color-primary-100) !important;
+  transform: scale(1.1);
+}
+.actions-cell .mat-mdc-icon-button.mat-warn:hover {
+  background: var(--color-danger-light) !important;
+  transform: scale(1.1);
+}
+.actions-cell .mat-mdc-icon-button.mat-primary .mat-icon { color: var(--color-primary); }
+.actions-cell .mat-mdc-icon-button.mat-warn .mat-icon   { color: var(--color-danger); }

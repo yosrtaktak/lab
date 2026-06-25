@@ -1,0 +1,66 @@
+<section class="member-page">
+
+  <!-- Page header -->
+  <div class="page-header">
+    <div>
+      <p class="page-kicker">Gestion</p>
+      <h1>Membres</h1>
+      <p class="page-description">Liste des membres inscrits au laboratoire.</p>
+    </div>
+    <button mat-raised-button color="primary" class="create-btn" routerLink="/Create">
+      <mat-icon>person_add</mat-icon>
+      Nouveau membre
+    </button>
+  </div>
+
+  <!-- Table card -->
+  <mat-card class="member-card">
+    <div class="table-wrap">
+      <table mat-table [dataSource]="dataSource" class="member-table">
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td mat-cell *matCellDef="let member">{{ member.id }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="cin">
+          <th mat-header-cell *matHeaderCellDef>CIN</th>
+          <td mat-cell *matCellDef="let member">{{ member.cin }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="nom">
+          <th mat-header-cell *matHeaderCellDef>Nom</th>
+          <td mat-cell *matCellDef="let member">{{ member.nom }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="type">
+          <th mat-header-cell *matHeaderCellDef>Type</th>
+          <td mat-cell *matCellDef="let member">
+            <span class="badge badge-primary">{{ member.type }}</span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="createdDate">
+          <th mat-header-cell *matHeaderCellDef>Date de création</th>
+          <td mat-cell *matCellDef="let member">{{ member.createdDate }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let member" class="actions-cell">
+            <button mat-icon-button color="primary" aria-label="Modifier" routerLink="/edit/{{member.id}}">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" aria-label="Supprimer" (click)="deleteMember(member.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </mat-card>
+
+</section>
