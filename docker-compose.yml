@@ -12,4 +12,4 @@ services:
       context: .
       dockerfile: Dockerfile.backend
     ports:
-      - "3000:3000"
+      - "3100:3100"
